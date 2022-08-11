@@ -6,8 +6,6 @@ import pandas as pd
 import csv
 
 
-
-
 def generete_csv_from_neb_file(Dict):
     ls = []
     for i in range (0,18):
@@ -15,24 +13,24 @@ def generete_csv_from_neb_file(Dict):
     
     cell_id = Dict["cell_id"]
 
-    with h5py.File(f'C:\\Users\\galle\\OneDrive\\Desktop\\Project\\Alon Project\\Production\\NWB_files\\{cell_id}\\rCell{cell_id}.nwb' , 'r') as hdf:
+    with h5py.File(f'NWB_files\\{cell_id}\\rCell{cell_id}.nwb' , 'r') as hdf:
         repetition1_data = hdf.get('acquisition/timeseries/Activation/repetitions/repetition1/data')
         repetition2_data = hdf.get('acquisition/timeseries/Activation/repetitions/repetition2/data')
         repetition3_data = hdf.get('acquisition/timeseries/Activation/repetitions/repetition3/data')
 
-        os.mkdir(f'C:\\Users\\galle\\OneDrive\\Desktop\\Project\\Alon Project\\Production\\CSV\\{cell_id}')
+        os.mkdir(f'CSV\\{cell_id}')
 
-        with open(f'C:\\Users\\galle\\OneDrive\\Desktop\\Project\\Alon Project\\Production\\CSV\\{cell_id}\\data_{cell_id}_rep1.csv' , 'w') as csv_rep_1:
+        with open(f'CSV\\{cell_id}\\data_{cell_id}_rep1.csv' , 'w') as csv_rep_1:
             writer = csv.writer(csv_rep_1)
             writer.writerow(ls)
             writer.writerows(repetition1_data)
 
-        with open(f'C:\\Users\\galle\\OneDrive\\Desktop\\Project\\Alon Project\\Production\\CSV\\{cell_id}\\data_{cell_id}_rep2.csv' , 'w') as csv_rep_2:
+        with open(f'CSV\\{cell_id}\\data_{cell_id}_rep2.csv' , 'w') as csv_rep_2:
             writer = csv.writer(csv_rep_2)
             writer.writerow(ls)
             writer.writerows(repetition2_data)   
 
-        with open(f'C:\\Users\\galle\\OneDrive\\Desktop\\Project\\Alon Project\\Production\\CSV\\{cell_id}\\data_{cell_id}_rep3.csv' , 'w') as csv_rep_3:
+        with open(f'CSV\\{cell_id}\\data_{cell_id}_rep3.csv' , 'w') as csv_rep_3:
             writer = csv.writer(csv_rep_3)
             writer.writerow(ls)
             writer.writerows(repetition3_data) 

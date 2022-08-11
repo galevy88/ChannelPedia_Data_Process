@@ -5,10 +5,8 @@ import rCell_nwb_to_csv as CSV_Generator
 import pandas as pd
 import csv
 
-
 REP1 = 1
 REP3 = 4
-
 
 class Cell:
     
@@ -26,7 +24,7 @@ class Cell:
     def convert_csv_to_dataFrame_for_all_repetitions(self):
         cell_ID = self.information_Dict["cell_id"]
         for rep in range(REP1, REP3):
-            path = f'C:\\Users\\galle\\OneDrive\\Desktop\\Project\\Alon Project\\Production\\CSV\\{cell_ID}\\data_{cell_ID}_rep{rep}.csv'
+            path = f'CSV\\{cell_ID}\\data_{cell_ID}_rep{rep}.csv'
             df = DF_Generator.adjust_csv_to_DataFrame(path)
             if rep == 1:
                 self.rep1_dataFrame = df
@@ -47,5 +45,5 @@ class Cell:
 
     def convert_to_csv(self, data_avarage):
         cell_id = self.information_Dict["cell_id"]
-        data_avarage.to_csv(f'C:\\Users\\galle\\OneDrive\\Desktop\\Project\\Alon Project\\Production\\CSV\\{cell_id}\\data_{cell_id}_avarage_with_index.csv')
-        data_avarage.to_csv(f'C:\\Users\\galle\\OneDrive\\Desktop\\Project\\Alon Project\\Production\\CSV\\{cell_id}\\data_{cell_id}_avarage_no_index.csv', index=False)
+        data_avarage.to_csv(f'CSV\\{cell_id}\\data_{cell_id}_avarage_with_index.csv')
+        data_avarage.to_csv(f'CSV\\{cell_id}\\data_{cell_id}_avarage_no_index.csv', index=False)
