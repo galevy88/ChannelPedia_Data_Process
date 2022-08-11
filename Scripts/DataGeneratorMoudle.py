@@ -27,30 +27,30 @@ class DataGenerator:
 
 List_Cells_Test = [{
 "channel_type" : "K",
-"Kv_type" : "",
-"Kv_sub_type" : "",
-"temprature" : "",
+"Kv_type" : "1",
+"Kv_sub_type" : "1.1",
+"temprature" : "15",
 "cell_id" : "9412"
 },
 {
 "channel_type" : "K",
-"Kv_type" : "",
-"Kv_sub_type" : "",
-"temprature" : "",
+"Kv_type" : "1",
+"Kv_sub_type" : "1.1",
+"temprature" : "15",
 "cell_id" : "9413"
 },
 {
 "channel_type" : "K",
-"Kv_type" : "",
-"Kv_sub_type" : "",
-"temprature" : "",
+"Kv_type" : "1",
+"Kv_sub_type" : "1.1",
+"temprature" : "15",
 "cell_id" : "9414"
 },
 {
 "channel_type" : "K",
-"Kv_type" : "",
-"Kv_sub_type" : "",
-"temprature" : "",
+"Kv_type" : "1",
+"Kv_sub_type" : "1.1",
+"temprature" : "15",
 "cell_id" : "9416"
 }
 ]
